@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Human Workout</title>
-    <center>Welcome to your human workout! pick which muscles you would like to train!</center>
-  </head>
-  <body>
-    <section>
-      <svg>
-          <a href="#" class="svg"><img src='https://svgshare.com/i/7bP.svg' title='HUMAN BODY' /></a>
-      </svg>
-    </section>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human Workout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align items */
+      padding: 20px;
+    }
+
+    /* Center welcome message */
+    h1 {
+      text-align: center;
+    }
+
+    /* Info box styling */
+    .info-box {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      display: none; /* Initially hidden */
+    }
+
+    /* Show info box when active */
+    .info-box.active {
+      display: block;
+    }
+
+    /* SVG styling */
+    .image-container {
+      cursor: pointer; /* Change cursor to pointer for the SVG */
+      margin-bottom: 20px; /* Add some space below the image */
+    }
+
+    /* Optional hover effect on SVG */
+    .image-container:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to your human workout! Pick which muscles you would like to train!</h1>
+
+  <!-- Image container with SVG -->
+  <div class="image-container" onclick="showInfo()">
+    <svg>
+      <a href="#" class="svg"><img src='https://svgshare.com/i/7bP.svg' title='HUMAN BODY' /></a>
+    </svg>
+  </div>
+
+  <!-- Info box that displays content -->
+  <div class="info-box" id="info-box">
+    <h3 id="info-title">Information Title</h3>
+    <p id="info-content">Click on the human body image to learn about muscle groups!</p>
+  </div>
+
+  <script>
+    // Function to display information when the image is clicked
+    function showInfo() {
+      const infoBox = document.getElementById('info-box');
+      const infoTitle = document.getElementById('info-title');
+      const infoContent = document.getElementById('info-content');
+
+      // Update the content of the info box
+      infoTitle.innerText = 'Muscle Groups';
+      infoContent.innerText = 'This image represents various muscle groups. Click on different areas to learn more about each muscle!';
+
+      // Display the info box
+      infoBox.classList.add('active');
+    }
+  </script>
+</body>
 </html>
