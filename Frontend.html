@@ -17,6 +17,23 @@
       </svg>
     </section>
   </body>
+
+  <body>
+  <!--This is the image text box-->
+  <div id = 'info skull'>
+    <h3>Skull Info</h3>
+    <p>The skull is important</p>
+  </div>
+
+  <!--This runs only when the user clicks on the HUMAN BODY image-->
+  <script>
+      document.getElementByID('HUMAN BODY').addEventListener('click', function() {
+        const infoDiv = document.getElementById('info skull');
+        infoDiv.style.display = infoDiv.style.display === 'none' ? 'block' : none;
+      });
+  </script>
+</body>
+
 </html>
 
 
